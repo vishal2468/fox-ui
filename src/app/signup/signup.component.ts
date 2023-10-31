@@ -12,7 +12,7 @@ export class SignupComponent {
     email: '',
     password: '',
     active: true,
-    role:'ROLE_ADMIN'
+    roles:'ROLE_ADMIN'
 
   };
   constructor(private http: HttpClient) {}
