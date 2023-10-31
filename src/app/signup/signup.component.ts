@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,7 @@ export class SignupComponent {
     roles:'ROLE_ADMIN'
 
   };
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private router: Router) {}
 
   submitForm() {
     // Add your form submission logic here
@@ -26,6 +27,7 @@ export class SignupComponent {
     this.http.post(url, this.user).subscribe(
       (response) => {
         console.log('Form submitted successfully:', response);
+        this.router.navigate(['/login']); // Navigate to login page
         // Handle success response from the external service
       },
       (error) => {
