@@ -8,9 +8,12 @@ import { Component } from '@angular/core';
 })
 export class SignupComponent {
   user = {
-    username: '',
+    userName: '',
     email: '',
-    password: ''
+    password: '',
+    active: true,
+    role:'ROLE_ADMIN'
+
   };
   constructor(private http: HttpClient) {}
 
