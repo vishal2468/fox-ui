@@ -1,17 +1,16 @@
 <!-- dashboard.component.html -->
 <div>
     <form (ngSubmit)="onSubmit()">
-      <div>
-        <label for="dropdown">Select Value:</label>
-        <doctor-dropdown (selectedValueChange)="onDropdownValueChange($event)"></doctor-dropdown>
-      </div>
-  
-      <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" [(ngModel)]="userName" name="name" required>
-      </div>
-  
-      <button type="submit">Submit</button>
+        <div>
+            <label for="dropdown">Select Value:</label>
+            <doctor-dropdown (selectedValueChange)="onDropdownValueChange($event)"></doctor-dropdown>
+        </div>
+
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" [(ngModel)]="userName" name="name" required>
+        </div>
+
+        <button type="submit">Submit</button>
     </form>
-  </div>
-  
+</div>
