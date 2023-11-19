@@ -7,12 +7,16 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { DoctorDropdownComponent } from './doctor-dropdown/doctor-dropdown.component';
+import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    DoctorDropdownComponent,
+    PatientDashboardComponent
   ],
   imports: [
     BrowserModule,
