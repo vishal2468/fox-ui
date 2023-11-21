@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { DoctorDropdownComponent } from './doctor-dropdown/doctor-dropdown.component';
 import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
+import { PatientDropdownComponent } from './patient-dropdown/patient-dropdown.component';
+import { HealthParameterDropdownComponent } from './health-parameter-dropdown/health-parameter-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard
     SignupComponent,
     LoginComponent,
     DoctorDropdownComponent,
-    PatientDashboardComponent
+    PatientDashboardComponent,
+    DoctorDashboardComponent,
+    PatientDropdownComponent,
+    HealthParameterDropdownComponent
   ],
   imports: [
     BrowserModule,
