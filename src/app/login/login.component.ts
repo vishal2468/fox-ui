@@ -12,6 +12,7 @@ export class LoginComponent {
     userName: '',
     password: '',
   };
+
   constructor(private http: HttpClient,private router: Router) {}
 
   submitForm() {
@@ -21,7 +22,9 @@ export class LoginComponent {
     const url = 'http://localhost:8080/login';
 
     this.http.post(url, this.user).subscribe(
-      (response) => {
+      (response:any) => {
+        localStorage.setItem("username" ,this.user.userName)
+        localStorage.setItem("token", response.token)
         console.log('Login successfully:', response);
       },
       (error) => {

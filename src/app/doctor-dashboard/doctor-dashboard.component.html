@@ -1,7 +1,11 @@
 <!-- doctor-dashboard.component.html -->
 <div>
-    <app-patient-dropdown (patientSelected)="onPatientSelected($event)"></app-patient-dropdown>
-    <app-health-parameter-dropdown (parameterSelected)="onParameterSelected($event)"></app-health-parameter-dropdown>
+    <select>
+      <option *ngFor="let option of patientsDropdown" [value]="option" (onSelect)=" onPatientSelected($event)">{{ option }}</option>
+    </select>
+    <select>
+      <option *ngFor="let option of healthParameters" [value]="option" (onSelect)=" onParameterSelected($event)">{{ option }}</option>
+    </select>
     <button (click)="getInfo()">Get Info</button>
   </div>
   <div *ngIf="result">

@@ -13,10 +13,18 @@ export class SignupComponent {
     email: '',
     password: '',
     active: true,
-    roles:'ROLE_ADMIN'
+    roles: 'ROLE_ADMIN'
 
   };
-  constructor(private http: HttpClient,private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
+
+  navDoctorDashboard() {
+    this.router.navigateByUrl('/doctor-dashboard')
+  }
+
+  navPatientDashboard() {
+    this.router.navigateByUrl('/patient-dashboard')
+  }
 
   submitForm() {
     // Add your form submission logic here

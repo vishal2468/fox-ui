@@ -11,17 +11,23 @@ export class DoctorDashboardComponent {
   result: any;
   selectedPatient!: string;
   selectedParameter!: string;
+  patientsDropdown: any
+  healthParameters: any
+  ngOnInit() {
+    this.patientsDropdown = ["p1", "p2"]
+    this.healthParameters = ["bp","heartrate"]
+  }
 
-  constructor(private healthApiService: HealthApiService) {}
+  constructor(private healthApiService: HealthApiService) { }
 
   @Output() patientSelected = new EventEmitter<string>();
 
-  onPatientSelected(patient: string) {
+  onPatientSelected(patient: any) {
     // Assuming you have a value property in your dropdown options
-    this.selectedPatient = patient
+    this.selectedPatient = patient;
   }
 
-  onParameterSelected(parameter: string) {
+  onParameterSelected(parameter: any) {
     this.selectedParameter = parameter;
   }
 
@@ -35,4 +41,5 @@ export class DoctorDashboardComponent {
       }
     );
   }
+
 }
