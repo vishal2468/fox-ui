@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PatientDashboardComponent {
   selectedDropdownValue?: string;
-  userName?: string;
+  userName ?: string = '';
 
   constructor(private http: HttpClient) {}
 
@@ -24,7 +24,7 @@ export class PatientDashboardComponent {
   }
   onOAuthButtonClick(): void {
     // Call your external OAuth API here
-    const oauthApiUrl = 'your_oauth_api_url';
+    const oauthApiUrl = 'http://localhost:8080/google/auth';
 
     this.http.get(oauthApiUrl).subscribe(
       (response) => {

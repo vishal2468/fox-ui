@@ -19,18 +19,6 @@ export class LoginComponent {
     // Add your form submission logic here
     console.log(this.user);
     // You can send this data to a server or perform any other action.
-    const url = 'http://localhost:8080';
-
-    this.http.post(url, this.user).subscribe(
-      (response:any) => {
-        localStorage.setItem("username" ,this.user.userName)
-        localStorage.setItem("password", this.user.password)
-        console.log('Login successfully:', response);
-      },
-      (error) => {
-        console.error('Error logging in', error);
-        // Handle error response from the external service
-      }
-    );
+    localStorage.setItem("token",window.btoa(this.user.userName+":"+this.user.password))
   }
 }

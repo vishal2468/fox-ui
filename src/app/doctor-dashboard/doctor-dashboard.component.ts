@@ -1,5 +1,5 @@
 // doctor-dashboard.component.ts
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { HealthApiService } from '../health-api.service';
 
 @Component({
@@ -15,12 +15,15 @@ export class DoctorDashboardComponent {
   healthParameters: any
   ngOnInit() {
     this.patientsDropdown = ["p1", "p2"]
-    this.healthParameters = ["bp","heartrate"]
+    this.healthParameters = [
+                              { "key": "bloodpressure", "label": "Blood Pressure" },
+                              { "key": "heartrate", "label": "Heart Rate" },
+                              { "key": "oxygensaturation", "label": "Oxygen Saturation" },
+                              { "key": "bodytemperature", "label": "Body Temperature" }
+                            ]
   }
 
   constructor(private healthApiService: HealthApiService) { }
-
-  @Output() patientSelected = new EventEmitter<string>();
 
   onPatientSelected(patient: any) {
     // Assuming you have a value property in your dropdown options

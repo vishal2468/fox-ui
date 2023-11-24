@@ -16,6 +16,14 @@ export class SignupComponent {
     roles: 'ROLE_ADMIN'
 
   };
+  roleTypes = [
+      { "key": "ROLE_DOCTOR", "label": "Doctor" },
+      { "key": "ROLE_PATIENT", "label": "Patient" }
+    ]
+
+  onRoleSelected(parameter: any) {
+    this.user.roles = parameter;
+  }
   constructor(private http: HttpClient, private router: Router) { }
 
   navDoctorDashboard() {

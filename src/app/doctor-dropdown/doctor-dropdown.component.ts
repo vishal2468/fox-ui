@@ -10,7 +10,7 @@ import { DoctorsListService } from '../doctors-list.service';
 export class DoctorDropdownComponent implements OnInit {
   @Output() selectedValueChange = new EventEmitter<string>();
 
-  dropdownValues: string[] = [];
+  dropdownValues: any[] = [];
   selectedValue!: string;
 
   constructor(private dataService: DoctorsListService) {}

@@ -4,7 +4,7 @@
       <option *ngFor="let option of patientsDropdown" [value]="option" (onSelect)=" onPatientSelected($event)">{{ option }}</option>
     </select>
     <select>
-      <option *ngFor="let option of healthParameters" [value]="option" (onSelect)=" onParameterSelected($event)">{{ option }}</option>
+      <option *ngFor="let option of healthParameters" [value]="option.key" (onSelect)=" onParameterSelected($event)">{{ option.label }}</option>
     </select>
     <button (click)="getInfo()">Get Info</button>
   </div>

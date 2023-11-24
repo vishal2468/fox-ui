@@ -11,6 +11,9 @@
       <label for="password">Password:</label>
       <input type="password" id="password" [(ngModel)]="user.password" name="password" required>
     </div>
+    <select>
+      <option *ngFor="let option of roleTypes" [value]="option.key" (onChange)=" onRoleSelected($event)">{{ option.label }}</option>
+    </select>
     <button type="submit" (click)="submitForm()">Sign Up</button>
     <button (click)="navDoctorDashboard()">doctor-dashboard</button>
     <button (click)="navPatientDashboard()">patient-dashboard</button>
